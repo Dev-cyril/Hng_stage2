@@ -1,0 +1,28 @@
+.movie-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.movie-info {
+    padding: 16px;
+    color: #000;
+}
+
+.movie-info img{
+    width: 100%;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}

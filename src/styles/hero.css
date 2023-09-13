@@ -1,0 +1,101 @@
+.hero-wrapper{
+    background-position: center;
+    border: wpx solid red;
+    padding: 10px 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    color: #fff;
+    background-color: #151515;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+.header-logo a{
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+}
+
+form{
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+}
+form input{
+    width: 400px;
+    border: 0;
+    padding: 10px;
+    height: 40px;
+    background: transparent;
+    color: #fff;
+}
+
+::placeholder{
+    color: #fff;
+}
+form input:focus{
+    outline: none;
+}
+
+form button{
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero-wrapper .text button{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    height: 40px;
+    width: fit-content;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+.hero-wrapper .text button:hover{
+    opacity: .8;
+}
+.hero-section{
+    width: 40%;
+    margin-top: 15vh;
+}
+.hero-section .text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.text h2{
+    font-size: 28px;
+}
+.tips{
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tips div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tips div img{
+    width: 30px;
+}
+
+.summary{
+    line-height: 22px;
+}
