@@ -1,15 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { MovieContext } from './Context';
 import imbd from '../assets/imdb.svg'
 import tomato from '../assets/tomato.svg'
 import '../styles/movielist.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Movie() {
-  const { featuredMovie, setFeaturedMovie, setMovie } = useContext(MovieContext);
-  const [ genre, setGenre] = useState(null)
-  const [genreData, setGenreData] = useState(null)
-  let genreList = []
+  const { featuredMovie } = useContext(MovieContext);
 
   const url ='https://api.themoviedb.org/3/genre/movie/list?language=en'
   const options = {
@@ -23,7 +20,11 @@ export default function Movie() {
   //   try{
   //     const response = await fetch(url, options)
   //     const responseData = await response.json()
-  //     setGenreData(responseData)
+  //     responseData.forEach(genre => {
+  //       featuredMovie.forEach(obj => {
+  //         if(genre.id === obj.genres_id)
+  //       });
+  //     });
   //   }
   //   catch (err){
   //     console.log(err)
@@ -34,8 +35,6 @@ export default function Movie() {
   //   getGenre()
   // }, [])
 
-  
-
   return (
     <section>
       <div className='heading'>
@@ -45,11 +44,11 @@ export default function Movie() {
       <div className='movie-wrapper'>
         {
           featuredMovie ? 
-            featuredMovie.map((movie, index) => (
+            featuredMovie.slice(0, 10).map((movie, index) => (
               <Link  to={`/movies/${movie.id}`}>
                 <div data-testid='movie-card' key={index} className='movie-info'>
                     <img data-testid='movie-poster' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-                    <h3 data-testid='movie-title'>{movie.original_title}</h3>
+                    <h3 data-testid='movie-title'>{movie.title}</h3>
                     <div className="tips">
                       <div> <img src={imbd} alt='imbd'/> {movie.vote_average}</div>
                       <div> <img src={tomato} alt='fruit'/> 97%</div>

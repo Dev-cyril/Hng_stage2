@@ -1,14 +1,14 @@
 .hero-wrapper{
     background-position: center;
     padding: 10px 30px;
-    background-repeat: no-repeat;
     position: relative;
     height: 100vh;
     color: #fff;
-    background-color: #151515;
-    background-position: 100% 0;
     background-repeat: no-repeat;
-    background-size: 100% 100vh;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, .5);
+    padding: 15px 40px;
+
 }
 .header-container{
     display: flex;
@@ -22,9 +22,11 @@
     align-items: center;
     gap: 15px;
 }
+.header-logo a img{
+    width: 50px;
+}
 .header-logo h2{
-    margin-left: -130px;
-    color: rgb(245, 59, 59);
+    color: #fff;
 }
 
 .signin{
@@ -81,7 +83,7 @@ form button{
 }
 .hero-section{
     width: 40%;
-    margin-top: 15vh;
+    margin-top: 25vh;
 }
 .hero-section .text{
     display: flex;
@@ -114,9 +116,6 @@ form button{
 
 /* Media query */
 @media screen and (max-width:787px) {
-    .header-logo a img{
-        width: 140px;
-    }
     form input{
         width: 300px;
     }
@@ -127,11 +126,11 @@ form button{
 }
 
 @media screen and (max-width:600px) {
-    form{
-        margin-left: -100px;
+    .hero-wrapper{
+        padding: 15px;
     }
     form input {
-        width: 150px;
+        width: 200px;
     }
     .hero-wrapper{
         height: 800px;

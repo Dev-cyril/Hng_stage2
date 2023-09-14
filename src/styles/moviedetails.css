@@ -17,6 +17,7 @@ aside .div{
     gap: 10px;
     color: grey;
     padding: 0 10px;
+    cursor: pointer;
 }
 
 aside .div:nth-child(2){
@@ -30,26 +31,18 @@ aside .div:nth-child(2){
 }
 
 .movie-image{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, .5);
     position: relative;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-position: 50% 0;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     border-radius: 15px;
     color: #fff;
-    background-blend-mode: darken;
-}
-
-.movie-image::before{
-    content: '';
-    opacity: .5;
-    position: absolute;
-    
 }
 
 .watch{
@@ -72,6 +65,10 @@ aside .div:nth-child(2){
     margin: 10px;
     font-weight: 500;
 }
+.key-details  >*:not(:first-child){
+    color: grey;
+    font-size: 17px;
+}
 .others h5{
     font-size: 16px;
     font-weight: 500;
@@ -89,6 +86,7 @@ aside .div:nth-child(2){
         display: flex;
         justify-content: space-around;
         border-radius: 0 0 20px 20px;
+        position: relative;
     }
     aside .div {
         height: fit-content;

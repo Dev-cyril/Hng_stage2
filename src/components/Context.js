@@ -8,8 +8,9 @@ export const MovieContext = createContext();
 
 export default function Context() {
   const [movie, setMovie] = useState([]);
-  const [featuredMovie, setFeaturedMovie] = useState(null);
+  const [featuredMovie, setFeaturedMovie] = useState([]);
   const [searchItem, setSearchItem] = useState(null)
+  const movieDataBase = [...new Set([...movie, ...featuredMovie])]
 
   const url =
     'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
@@ -26,8 +27,7 @@ export default function Context() {
     try {
       const response = await fetch(url, param);
       const data = await response.json();
-      setFeaturedMovie(data.results.slice(0, 10));
-      localStorage.setItem('movies', data.results)
+      setFeaturedMovie(data.results);
     } catch (err) {
       alert(err);
     }
@@ -44,18 +44,8 @@ export default function Context() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           {
-            movie?
-            movie.map((movieData) => (
-            <Route
-              key={movieData.id}
-              path={`/movies/${movieData.id}`}
-              element={<MovieDetails id={movieData.id} />}
-            />
-          )) :null
-          }
-          {
-            featuredMovie?
-            featuredMovie.map((movieData) => (
+            movieDataBase?
+            movieDataBase.map((movieData) => (
             <Route
               key={movieData.id}
               path={`/movies/${movieData.id}`}

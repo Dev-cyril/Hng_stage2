@@ -4,7 +4,7 @@ import { MovieContext } from './Context';
 import play from '../assets/Play.svg';
 import imbd from '../assets/imdb.svg'
 import tomato from '../assets/tomato.svg'
-import logo from '../assets/Logo.svg'
+import logo from '../assets/logo.webp'
 import menu from '../assets/Menu.svg'
 
 export default function Hero() {
@@ -64,14 +64,15 @@ export default function Hero() {
                 type="search"
                 name="q"
                 id="search-input"
-                placeholder="What do you want to watch"
+                placeholder="What do you want to watch?"
                 aria-label="Search through site content"
               />
               <button className="search-button">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 14L10 10M11.3333 6.66667C11.3333 9.244 9.244 11.3333 6.66667 11.3333C4.08934 11.3333 2 9.244 2 6.66667C2 4.08934 4.08934 2 6.66667 2C9.244 2 11.3333 4.08934 11.3333 6.66667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="search-icon">
+                  <path
+                    d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"
+                  ></path>
                 </svg>
-
               </button>
             </form>
             <div className='signin'>
