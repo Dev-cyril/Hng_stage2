@@ -19,6 +19,7 @@ export default function Footer() {
             <a>Privacy & Policy</a>
             <a>Press Room</a>
         </div>
+        <p><span>&copy;</span> 2021 MovieBox by Adriana Eka Prayudha</p>
     </footer>
   )
 }

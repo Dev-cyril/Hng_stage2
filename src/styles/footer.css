@@ -13,5 +13,18 @@ footer .links{
 footer .links a{
     color: #000;
 }
+p{
+    text-align: center;
+    margin: 20px;
+}
 
 /* media query */
+@media screen and (max-width: 600px){
+    footer .links{
+        font-size: 14px;
+        width: fit-content;
+    }
+    p{
+        font-size: 14px;
+    }
+}

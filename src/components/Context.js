@@ -1,13 +1,15 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import MovieDetails from './pages/MovieDetails';
+import ErrorPage from './pages/ErrorPage';
 
 export const MovieContext = createContext();
 
 export default function Context() {
   const [movie, setMovie] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
+  const [searchItem, setSearchItem] = useState(null)
 
   const url =
     'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
@@ -37,7 +39,7 @@ export default function Context() {
 
 
   return (
-    <MovieContext.Provider value={{ movie, setMovie, featuredMovie, setFeaturedMovie }}>
+    <MovieContext.Provider value={{ movie, setMovie, featuredMovie, setFeaturedMovie, searchItem, setSearchItem }}>
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -61,6 +63,8 @@ export default function Context() {
             />
           )) :null
           }
+          <Route path='/404-Not-found' element={<ErrorPage/>} />
+          <Route path="*" element={<Navigate to="/404-Not-found" />} />
         </Routes>
       </Router>
     </MovieContext.Provider>

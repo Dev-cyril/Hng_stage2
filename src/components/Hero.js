@@ -5,6 +5,7 @@ import play from '../assets/Play.svg';
 import imbd from '../assets/imdb.svg'
 import tomato from '../assets/tomato.svg'
 import logo from '../assets/Logo.svg'
+import menu from '../assets/Menu.svg'
 
 export default function Hero() {
   const { movie, setMovie } = useContext(MovieContext);
@@ -34,7 +35,6 @@ export default function Hero() {
   const getRandom = () => {
     if(movie.length > 0){
       const random = movie[Math.floor(Math.random() * movie.length)];
-      console.log(random)
       setBackgroundImage(`https://image.tmdb.org/t/p/original/${random.poster_path}`);
       setHeroMovie(random)
     }
@@ -56,7 +56,7 @@ export default function Hero() {
           <div className="header-container">
             <div className="header-logo">
               <a href="#">
-                <img src={logo} alt="movie db"/>
+                <img src={logo} alt="movie db"/> <h2>MovieBox</h2>
               </a>
             </div>
             <form action="#" method="post" className="form-search">
@@ -74,6 +74,9 @@ export default function Hero() {
 
               </button>
             </form>
+            <div className='signin'>
+              <h3>Sign In</h3> <img src={menu} alt='' />
+            </div>
           </div>
         </div>
       </header>

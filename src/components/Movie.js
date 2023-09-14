@@ -3,18 +3,45 @@ import { MovieContext } from './Context';
 import imbd from '../assets/imdb.svg'
 import tomato from '../assets/tomato.svg'
 import '../styles/movielist.css'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Movie() {
   const { featuredMovie, setFeaturedMovie, setMovie } = useContext(MovieContext);
+  const [ genre, setGenre] = useState(null)
+  const [genreData, setGenreData] = useState(null)
+  let genreList = []
+
+  const url ='https://api.themoviedb.org/3/genre/movie/list?language=en'
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmE2NTAzOTZjNDFhYTM4NDlmNjY1ZWQxOWM5NzQ2OSIsInN1YiI6IjY0ZmUzM2M0ZWZlYTdhMDBjMzk1ODc4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CfRP0JDY3PwJfVPEQ4jqQXxJi8h9PvU6dw02vOXSDhs'
+    }
+  };
+  // const getGenre = async () =>{
+  //   try{
+  //     const response = await fetch(url, options)
+  //     const responseData = await response.json()
+  //     setGenreData(responseData)
+  //   }
+  //   catch (err){
+  //     console.log(err)
+  //   }
+  // }
+
+  // useEffect(() =>{
+  //   getGenre()
+  // }, [])
+
+  
 
   return (
     <section>
-        <div className='heading'>
-            <h2>Featured Movie</h2>
-            <a>see more</a>
-        </div>
-      
+      <div className='heading'>
+          <h2>Featured Movie</h2>
+          <Link to="/">See more</Link>
+      </div>
       <div className='movie-wrapper'>
         {
           featuredMovie ? 
