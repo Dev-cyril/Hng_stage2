@@ -3,10 +3,13 @@ footer .links{
     display: flex;
     justify-content: center;
     gap: 30px;
-    width: 30%;
+    width: 70%;
     margin: 20px auto;
 }
-
+.links a{
+    font-weight: 700;
+    font-size: 18px;
+}
 .icons .icon{
     width: 30px;
 }
@@ -21,8 +24,11 @@ p{
 /* media query */
 @media screen and (max-width: 600px){
     footer .links{
-        font-size: 14px;
+        gap: 15px;
         width: fit-content;
+    }
+    .links a{
+        font-size: 14px;
     }
     p{
         font-size: 14px;

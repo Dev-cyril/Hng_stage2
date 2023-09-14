@@ -82,8 +82,8 @@ form button{
     opacity: .8;
 }
 .hero-section{
-    width: 40%;
-    margin-top: 25vh;
+    width: 45%;
+    margin-top: 20vh;
 }
 .hero-section .text{
     display: flex;
@@ -91,7 +91,7 @@ form button{
     gap: 15px;
 }
 .text h2{
-    font-size: 28px;
+    font-size: 30px;
 }
 .tips{
     width: 160px;
@@ -111,7 +111,7 @@ form button{
 }
 
 .summary{
-    line-height: 22px;
+    line-height: 25px;
 }
 
 /* Media query */
