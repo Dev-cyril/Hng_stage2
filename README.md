@@ -1,4 +1,4 @@
-# JNG INTERNSHIP- MovieBox Challenge Solution
+# HNG INTERNSHIP- MovieBox Challenge Solution
 
 This is a solution to the HNG internship stage 2 task.
 
@@ -16,7 +16,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/Screenshot%20(165).png)
+![](./src/assets/Screenshot%20(166).png)
 
 
 ### Links

@@ -62,6 +62,7 @@ form button{
     border: 0;
     outline: none;
     cursor: pointer;
+    background: transparent;
 }
 
 .hero-wrapper .text button{
@@ -77,6 +78,9 @@ form button{
     outline: none;
     border: 0;
     cursor: pointer;
+}
+form svg{
+    width: 30px;
 }
 .hero-wrapper .text button:hover{
     opacity: .8;
