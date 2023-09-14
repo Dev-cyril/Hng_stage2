@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { MovieContext } from '../Context';
 import '../../styles/moviedetails.css'
 import home from '../../assets/Home.svg'
 import movie from '../../assets/Movie Projector.svg'
@@ -7,18 +6,35 @@ import tv from '../../assets/TV Show.svg'
 import calendar from '../../assets/Calendar.svg'
 import play from '../../assets/Play.svg'
 import Loading from '../Loading'
+import { useParams } from 'react-router-dom';
 
-export default function MovieDetails({ id }) {
-  const { featuredMovie } = useContext(MovieContext);
+export default function MovieDetails() {
   const [item, setItem] = useState(null);
+  const { id } = useParams()
+
+  const url = `https://api.themoviedb.org/3/movie/${id}`
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmE2NTAzOTZjNDFhYTM4NDlmNjY1ZWQxOWM5NzQ2OSIsInN1YiI6IjY0ZmUzM2M0ZWZlYTdhMDBjMzk1ODc4OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.CfRP0JDY3PwJfVPEQ4jqQXxJi8h9PvU6dw02vOXSDhs'
+    }
+  };
+
+  const getData = async () => {
+    try{
+      const response = await fetch(url, options)
+      const responseData = await response.json()
+      setItem(responseData)
+    }
+    catch (err){
+      alert(err)
+    }
+  }
 
   useEffect(() => {
-    const selectedMovie = featuredMovie.find((movie) => movie.id === id);
-
-    if (selectedMovie) {
-      setItem(selectedMovie);
-    }
-  }, [featuredMovie, id]);
+    getData()
+  }, [id]);
 
   if (!item) {
     return <Loading />
@@ -54,12 +70,12 @@ export default function MovieDetails({ id }) {
           </div>
         </div>
         <div className='key-details'>
-          <h3>{item.title}</h3>
-          <h3>{item.release_date}</h3>
-          <h3>Runtime</h3>
+          <h3 data-testid='movie-title'>{item.title}</h3>
+          <h3 data-testid='movie-release-date'>{new Date(item.release_date).toISOString()}</h3>
+          <h3 data-testid='movie-runtime'>{item.runtime}</h3> <span>min</span>
         </div>
         <div className='others'>
-          <h5>{item.overview}</h5>
+          <h5 data-testid='movie-overview'>{item.overview}</h5>
         </div>
       </div>
     </section>

@@ -10,7 +10,6 @@ export default function Context() {
   const [movie, setMovie] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState([]);
   const [searchItem, setSearchItem] = useState(null)
-  const movieDataBase = [...new Set([...movie, ...featuredMovie])]
 
   const url =
     'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1';
@@ -43,16 +42,7 @@ export default function Context() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          {
-            movieDataBase?
-            movieDataBase.map((movieData) => (
-            <Route
-              key={movieData.id}
-              path={`/movies/${movieData.id}`}
-              element={<MovieDetails id={movieData.id} />}
-            />
-          )) :null
-          }
+          <Route path='/movies/:id' element={<MovieDetails/>}/>
           <Route path='/404-Not-found' element={<ErrorPage/>} />
           <Route path="*" element={<Navigate to="/404-Not-found" />} />
         </Routes>

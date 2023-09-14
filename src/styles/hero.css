@@ -149,4 +149,10 @@ form svg{
         width: 90%;
         margin-top: 8vh;
     }
+    form svg{
+        width: 15px;
+    }
+    .header-logo a img{
+        width: 50px;
+    }
 }
