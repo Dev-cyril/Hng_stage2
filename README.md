@@ -1,18 +1,51 @@
-# Getting Started with Create React App
+# JNG INTERNSHIP- MovieBox Challenge Solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the HNG internship stage 2 task.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+### The challenge
 
-### `npm start`
+Users should be able to:
 
-Runs the app in the development mode.\
+- View the optimal layout for the site depending on their device's screen size
+- Be able to preview any movie and see its details
+- See a list of top rated movies
+- Copy the shortened link to their clipboard in a single click
+- Receive an error message when accessing invalid urls
+
+### Screenshot
+
+![](./src/assets/Screenshot%20(165).png)
+
+
+### Links
+
+- Live Site URL: Hosted site [here](https://cyril-moviebox-hngx-2.vercel.app/)
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - JS library
+
+## Author
+
+- Linkedin - [Cyril Idu](https://www.linkedin.com/in/cyril-idu-885093185/)
+
+
+## Getting Started
+
+- Start by cloning the repository in your local computer using this command `git clone https://github.com/Dev-cyril/Hng_stage2.git`
+- Navigate to the root directory and run the following scripts
+1. `npm install`: Installs every dependencies needed to run this project locally.
+2. `npm start`: Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Other available scripts
 
 ### `npm test`
 
