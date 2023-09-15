@@ -117,4 +117,7 @@ aside .div:nth-child(2){
     aside .div img{
         display: none;
     }
+    .key-details{
+        flex-wrap: wrap;
+    }
 }
