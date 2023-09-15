@@ -110,7 +110,7 @@ aside .div:nth-child(2){
     }
 }
 
-@media screen and (max-width:600) {
+@media screen and (max-width:600px) {
     aside .div{
         font-size: 14px;
     }
